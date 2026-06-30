@@ -1,0 +1,420 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    padding: 5px 50px;
+    box-shadow: 0px 2px 10px rgb(234, 234, 234);
+    background-color: rgb(255, 255, 255);
+    position: sticky;
+    top: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.navlink {
+    display: flex;
+
+}
+
+.dropdown-links {
+    display: flex;
+    justify-content: space-around;
+}
+
+.dropdown {
+    position: relative;
+
+}
+
+.dropdown>a {
+    color: rgb(40, 44, 63);
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    margin-right: 20px;
+    text-decoration: none;
+    padding: 10px 15px;
+
+}
+
+.dropdown:hover>a {
+    border-bottom: 2px solid red;
+}
+
+/* .dropdown:hover #dropdown-content a{
+           display: none;
+        } */
+.dropdown:hover #dropdown-content {
+    display: block;
+}
+
+.dropdown-red {
+    color: rgb(235, 19, 55); 
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+#dropdown-content {
+    display: none;
+    position: fixed;
+    top: 60px;
+    /* Just below the navbar */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: aliceblue;
+    width: 80%;
+    /* Adjust width as needed */
+
+    padding-top: 10px;
+    z-index: 0;
+}
+
+#dropdown-content a {
+    color: black;
+    text-decoration: none;
+    padding: 8px 10px;
+    display: block;
+}
+
+#dropdown-content a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-links a p {
+    margin-top: -8px;
+}
+
+.dropdown-links div hr {
+    margin: 16px 0px;
+}
+
+a>sup {
+    color: palevioletred;
+    margin-left: -30px;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 11px;
+}
+
+.search>input {
+    border: none;
+    padding: 5px 10px;
+    background-color: transparent;
+    width: 300px;
+    font-size: 16px;
+}
+
+.search {
+    background-color: rgb(239, 238, 238);
+    color: grey;
+    padding: 8px;
+    border-radius: 9px;
+    font-size: 16px;
+}
+
+.Profile {
+    display: flex;
+    gap: 15px;
+    text-align: center;
+}
+
+.Prof>a {
+    text-decoration: none;
+    color: black;
+}
+
+.Profile a p {
+    font-weight: bold;
+}
+
+main {
+    margin: 50px 0px;
+}
+
+.offer-box {
+    position: fixed;
+    top: 50%;
+    right: -320px;
+    /* hidden off screen */
+    width: 320px;
+    height: 300px;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.4s ease;
+    z-index: 999;
+}
+
+/* When box is active/open */
+.offer-box.active {
+    right: 0;
+}
+
+/* -------------------------------
+       VERTICAL TAB (always visible)
+    -------------------------------- */
+.offer-tab {
+    position: absolute;
+    top: 50%;
+    left: -40px;
+    transform: translateY(-50%);
+    background: #444;
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+    writing-mode: vertical-rl;
+    /* vertical text */
+    text-orientation: mixed;
+    padding: 10px 7px;
+    height: 300px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 6px 0 0 6px;
+}
+
+/* -------------------------------
+       CONTENT INSIDE EXPANDED BOX
+    -------------------------------- */
+.offer-content {
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    /* needed for absolute arrow positioning */
+}
+
+/* Close Arrow Button ( > ) */
+.close-arrow {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #444;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    line-height: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, background 0.3s;
+}
+
+.close-arrow:hover {
+    background: #666;
+}
+
+/* Rotate arrow when box is active */
+.offer-box.active .close-arrow {
+    transform: rotate(180deg);
+    /* turns > into < */
+}
+
+/* -------------------------------
+       TEXT + COUPON + BUTTONS
+    -------------------------------- */
+.offer-content h2 {
+    font-size: 24px;
+    margin: 40px 0 0;
+    /* push down to make room for arrow */
+    color: #333;
+}
+
+.offer-content p {
+    font-size: 20px;
+    margin: 8px 0;
+    color: #555;
+}
+
+.coupon-code {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #f9f9f9;
+    font-weight: bold;
+    margin: 10px 0;
+    border: 1px dashed #333;
+}
+
+.offer-content button.cta {
+    background: #ff3f6c;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.offer-content button.cta:hover {
+    background: #e2335a;
+}
+
+
+.headerr>p {
+    text-align: center;
+    font-size: 100px;
+    margin-top: -50px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(197, 196, 196);
+}
+
+.flex {
+    display: flex;
+}
+
+.flex>div {
+    width: 20%;
+}
+
+.flex img {
+    width: 100%;
+}
+
+.sec2>h3 {
+    letter-spacing: 3px;
+    color: rgb(80, 79, 79);
+    margin: 50px 30px 90px;
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.sec2>p {
+    text-align: center;
+    font-size: 100px;
+    color: grey;
+    margin-top: -50px;
+}
+
+.flex2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    padding: 50px 250px;
+    background-color: rgb(240, 243, 243);
+    line-height: 1.8;
+    color: gray;
+    font-family: "Assistant", sans-serif;
+}
+
+ul li {
+    list-style-type: none;
+    color: rgb(67, 67, 67);
+}
+
+h5 {
+    margin: 15px 0px;
+}
+
+.f_flex {
+    display: flex;
+    gap: 30px;
+}
+
+.f1 {
+    flex: 1;
+}
+
+.f2 {
+    flex: 1;
+}
+
+.f3 {
+    flex: 2;
+}
+
+.f4 {
+    flex: 2;
+    margin-top: 20px;
+}
+
+.f1>img {
+    width: 60px;
+}
+
+.f3>p {
+    margin-left: -30px;
+}
+
+.touch i {
+    color: rgb(88, 88, 88);
+    font-size: 35px;
+}
+
+footer section {
+    margin: 20px 0px;
+}
+
+.popsearch {
+    display: flex;
+}
+
+.POPULAR {
+    flex: 1;
+
+}
+
+.hr {
+    flex: 3;
+    margin-top: 12px;
+    margin-left: -170px;
+}
+
+.popsearch_name {
+    margin: 20px 0px 40px;
+}
+
+.popsearch_name>a {
+    color: rgb(88, 88, 88);
+    font-size: 17px;
+}
+
+.rel {
+    position: relative;
+}
+
+.abs {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.clothing li {
+    margin: 20px 0px 20px 40px;
+    color: gray;
+}
+
+footer strong {
+    color: rgb(79, 79, 79);
+}
+
+ol li {
+    margin-left: 40px;
+    color: rgba(51, 51, 51, 0.875);
+}
+
+footer h4,
+h3,
+h5,
+h6 {
+    color: rgba(51, 51, 51, 0.875);
+    font-size: 18px;
+}
+
+.mynstudio {
+    margin-bottom: 11px;
+}
